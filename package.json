@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seed": "tsx scripts/seed.ts",
+    "db:migrate": "wrangler d1 execute canadian-prosperity-db --local --file=migrations/0001_initial.sql",
+    "db:seed": "wrangler d1 execute canadian-prosperity-db --local --file=migrations/0002_seed.sql"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "workerd", "sharp"]
   },
   "dependencies": {
     "next": "16.1.6",
@@ -21,6 +27,8 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "tsx": "^4.21.0",
+    "typescript": "^5",
+    "wrangler": "^4.69.0"
   }
 }
