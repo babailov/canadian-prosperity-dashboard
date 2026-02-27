@@ -1,5 +1,5 @@
 # Canadian City Prosperity Dashboard — Cloudflare Workers (via vinext)
-# account_id is set via CLOUDFLARE_ACCOUNT_ID env var (personal: dabb004a42b86e509dfe7b8a9ef80504)
+# account_id is set via CLOUDFLARE_ACCOUNT_ID env var
 name = "canadian-prosperity-dashboard"
 compatibility_date = "2026-02-27"
 compatibility_flags = ["nodejs_compat"]
@@ -13,13 +13,21 @@ binding = "ASSETS"
 [images]
 binding = "IMAGES"
 
-# D1 and R2 bindings are Phase 2 — not used in the static MVP
-# Uncomment when ready:
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "canadian-prosperity-db"
-# database_id = "REPLACE_WITH_YOUR_D1_ID"
+# ── Production (main branch) ──────────────────────────────────────
+[env.production]
+name = "canadian-prosperity-dashboard-prod"
 
-# [[r2_buckets]]
-# binding = "RAW_DATA"
-# bucket_name = "canadian-prosperity-raw"
+# D1 and R2 bindings are Phase 2
+# [[env.production.d1_databases]]
+# binding = "DB"
+# database_name = "canadian-prosperity-db-prod"
+# database_id = "REPLACE_WITH_PROD_D1_ID"
+
+# ── Development (develop branch) ──────────────────────────────────
+[env.development]
+name = "canadian-prosperity-dashboard-dev"
+
+# [[env.development.d1_databases]]
+# binding = "DB"
+# database_name = "canadian-prosperity-db-dev"
+# database_id = "REPLACE_WITH_DEV_D1_ID"
