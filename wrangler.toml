@@ -1,6 +1,6 @@
 # Canadian City Prosperity Dashboard — Cloudflare Pages (static export)
+# account_id is set via CLOUDFLARE_ACCOUNT_ID env var (personal: dabb004a42b86e509dfe7b8a9ef80504)
 name = "canadian-prosperity-dashboard"
-account_id = "dabb004a42b86e509dfe7b8a9ef80504"
 compatibility_date = "2024-12-01"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = "out"
