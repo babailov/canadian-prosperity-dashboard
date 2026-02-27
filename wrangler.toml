@@ -13,21 +13,12 @@ binding = "ASSETS"
 [images]
 binding = "IMAGES"
 
-# ── Production (main branch) ──────────────────────────────────────
-[env.production]
-name = "canadian-prosperity-dashboard-prod"
+# Environment-specific deploys are handled in CI by overriding the name:
+#   main   → canadian-prosperity-dashboard-prod
+#   develop → canadian-prosperity-dashboard-dev
 
 # D1 and R2 bindings are Phase 2
-# [[env.production.d1_databases]]
+# [[d1_databases]]
 # binding = "DB"
-# database_name = "canadian-prosperity-db-prod"
-# database_id = "REPLACE_WITH_PROD_D1_ID"
-
-# ── Development (develop branch) ──────────────────────────────────
-[env.development]
-name = "canadian-prosperity-dashboard-dev"
-
-# [[env.development.d1_databases]]
-# binding = "DB"
-# database_name = "canadian-prosperity-db-dev"
-# database_id = "REPLACE_WITH_DEV_D1_ID"
+# database_name = "canadian-prosperity-db"
+# database_id = "REPLACE_WITH_D1_ID"
