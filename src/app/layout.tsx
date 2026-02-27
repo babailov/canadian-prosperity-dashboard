@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import TopNav from "@/components/nav/TopNav";
 
@@ -9,11 +9,7 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-space-grotesk",
-});
+// Space_Grotesk is loaded via CSS @import in globals.css (vinext shim limitation)
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -59,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className={`${inter.className} bg-[#FAFAF7] text-[#1C1917] min-h-screen`}>
         <TopNav />

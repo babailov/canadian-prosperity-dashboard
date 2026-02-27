@@ -1,9 +1,17 @@
-# Canadian City Prosperity Dashboard — Cloudflare Pages (static export)
+# Canadian City Prosperity Dashboard — Cloudflare Workers (via vinext)
 # account_id is set via CLOUDFLARE_ACCOUNT_ID env var (personal: dabb004a42b86e509dfe7b8a9ef80504)
 name = "canadian-prosperity-dashboard"
-compatibility_date = "2024-12-01"
+compatibility_date = "2026-02-27"
 compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = "out"
+
+main = "./worker/index.ts"
+
+[assets]
+not_found_handling = "none"
+binding = "ASSETS"
+
+[images]
+binding = "IMAGES"
 
 # D1 and R2 bindings are Phase 2 — not used in the static MVP
 # Uncomment when ready:
