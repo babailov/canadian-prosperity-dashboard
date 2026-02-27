@@ -545,7 +545,7 @@ export default function AboutPage() {
               lineHeight: 1.6,
             }}
           >
-            Built with Next.js, Tailwind CSS, and deployed on Cloudflare Pages. Data sourced from
+            Built with Next.js, Tailwind CSS, and deployed on Cloudflare. Data sourced from
             Statistics Canada&apos;s Web Data Service, CMHC&apos;s Rental Market Survey, and ECCC&apos;s
             AQHI data. Last updated: November 2024.
           </p>
