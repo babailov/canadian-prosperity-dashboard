@@ -57,14 +57,18 @@ jobs:
 
       - name: Deploy to production
         if: github.ref == 'refs/heads/main'
-        run: npx vinext deploy --env production
+        run: |
+          sed -i 's/^name = "canadian-prosperity-dashboard"/name = "canadian-prosperity-dashboard-prod"/' wrangler.toml
+          npx vinext deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Deploy to development
         if: github.ref == 'refs/heads/develop'
-        run: npx vinext deploy --env development
+        run: |
+          sed -i 's/^name = "canadian-prosperity-dashboard"/name = "canadian-prosperity-dashboard-dev"/' wrangler.toml
+          npx vinext deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
