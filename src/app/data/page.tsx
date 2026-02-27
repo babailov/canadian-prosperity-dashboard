@@ -24,20 +24,20 @@ const LAST_REFRESH: Record<string, string> = {
 };
 
 const COVERAGE: Record<string, string> = {
-  "metric_unemployment_rate": "35/35",
-  "metric_employment_rate": "35/35",
-  "metric_median_income": "35/35",
-  "metric_avg_rent": "35/35",
-  "metric_vacancy_rate": "35/35",
-  "metric_housing_price_index": "35/35",
-  "metric_cpi": "35/35",
-  "metric_pop_growth": "35/35",
-  "metric_csi": "35/35",
-  "metric_aqhi": "35/35",
-  "metric_population": "35/35",
-  "metric_pop_growth_5yr": "35/35",
-  "metric_immigration_share": "35/35",
-  "metric_median_age": "35/35",
+  "metric_unemployment_rate": "36/36",
+  "metric_employment_rate": "36/36",
+  "metric_median_income": "36/36",
+  "metric_avg_rent": "36/36",
+  "metric_vacancy_rate": "36/36",
+  "metric_housing_price_index": "36/36",
+  "metric_cpi": "36/36",
+  "metric_pop_growth": "36/36",
+  "metric_csi": "36/36",
+  "metric_aqhi": "36/36",
+  "metric_population": "36/36",
+  "metric_pop_growth_5yr": "36/36",
+  "metric_immigration_share": "36/36",
+  "metric_median_age": "36/36",
 };
 
 const FRESHNESS_MAP: Record<string, { state: "fresh" | "aging" | "stale" | "historical"; label: string }> = {
@@ -147,7 +147,7 @@ export default function DataSourcesPage() {
               step: "01",
               title: "Normalize",
               description:
-                "Each metric is normalized to a 0–100 score using min-max normalization across all 35 CMAs. Values beyond 3 standard deviations are clipped to prevent outliers from collapsing other scores.",
+                "Each metric is normalized to a 0–100 score using min-max normalization across all 36 CMAs. Values beyond 3 standard deviations are clipped to prevent outliers from collapsing other scores.",
             },
             {
               step: "02",

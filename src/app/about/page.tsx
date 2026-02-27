@@ -49,7 +49,7 @@ export default function AboutPage() {
           Both MoneySense Best Places to Live (discontinued 2018) and Maclean&apos;s Best Communities
           (discontinued 2021) are gone. No active, interactive Canadian city prosperity comparison tool
           exists. CityScore Canada fills that gap — aggregating open data from Statistics Canada, CMHC,
-          and ECCC into a single, comparable index covering all 35 Census Metropolitan Areas.
+          and ECCC into a single, comparable index covering all 36 Census Metropolitan Areas.
         </p>
       </div>
 

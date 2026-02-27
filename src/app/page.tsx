@@ -4,7 +4,7 @@ import RankingTable from "@/components/rankings/RankingTable";
 export const metadata = {
   title: "Canadian City Prosperity Rankings",
   description:
-    "Rank all 35 Canadian Census Metropolitan Areas by prosperity score. Compare economic vitality, housing affordability, safety, quality of life, environment, and demographics.",
+    "Rank all 36 Canadian Census Metropolitan Areas by prosperity score. Compare economic vitality, housing affordability, safety, quality of life, environment, and demographics.",
 };
 
 export default function HomePage() {
@@ -54,7 +54,7 @@ export default function HomePage() {
               color: "#78716C",
             }}
           >
-            35 Metropolitan Areas
+            36 Metropolitan Areas
           </span>
         </div>
 
