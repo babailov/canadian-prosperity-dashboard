@@ -45,6 +45,10 @@ export const metadata: Metadata = {
     title: "CityScore Canada",
     description: "Rankings of all 36 Canadian CMAs by prosperity score.",
   },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
