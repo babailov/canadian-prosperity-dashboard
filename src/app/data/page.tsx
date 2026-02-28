@@ -1,4 +1,5 @@
-import { METRICS } from "@/lib/data";
+import { METRICS, RAW_METRIC_VALUES } from "@/lib/data";
+import { getFreshnessState } from "@/lib/scoring";
 import { DIMENSION_ORDER, DIMENSION_LABELS, Dimension } from "@/types";
 
 export const metadata = {
@@ -24,38 +25,37 @@ const LAST_REFRESH: Record<string, string> = {
 };
 
 const COVERAGE: Record<string, string> = {
-  "metric_unemployment_rate": "35/35",
-  "metric_employment_rate": "35/35",
-  "metric_median_income": "35/35",
-  "metric_avg_rent": "35/35",
-  "metric_vacancy_rate": "35/35",
-  "metric_housing_price_index": "35/35",
-  "metric_cpi": "35/35",
-  "metric_pop_growth": "35/35",
-  "metric_csi": "35/35",
-  "metric_aqhi": "35/35",
-  "metric_population": "35/35",
-  "metric_pop_growth_5yr": "35/35",
-  "metric_immigration_share": "35/35",
-  "metric_median_age": "35/35",
+  "metric_unemployment_rate": "36/36",
+  "metric_employment_rate": "36/36",
+  "metric_median_income": "36/36",
+  "metric_avg_rent": "36/36",
+  "metric_vacancy_rate": "36/36",
+  "metric_housing_price_index": "36/36",
+  "metric_cpi": "36/36",
+  "metric_pop_growth": "36/36",
+  "metric_csi": "36/36",
+  "metric_aqhi": "36/36",
+  "metric_population": "36/36",
+  "metric_pop_growth_5yr": "36/36",
+  "metric_immigration_share": "36/36",
+  "metric_median_age": "36/36",
 };
 
-const FRESHNESS_MAP: Record<string, { state: "fresh" | "aging" | "stale" | "historical"; label: string }> = {
-  "metric_unemployment_rate": { state: "fresh", label: "Fresh" },
-  "metric_employment_rate": { state: "fresh", label: "Fresh" },
-  "metric_median_income": { state: "historical", label: "Historical" },
-  "metric_avg_rent": { state: "aging", label: "Aging" },
-  "metric_vacancy_rate": { state: "aging", label: "Aging" },
-  "metric_housing_price_index": { state: "aging", label: "Aging" },
-  "metric_cpi": { state: "fresh", label: "Fresh" },
-  "metric_pop_growth": { state: "aging", label: "Aging" },
-  "metric_csi": { state: "aging", label: "Aging" },
-  "metric_aqhi": { state: "fresh", label: "Fresh" },
-  "metric_population": { state: "aging", label: "Aging" },
-  "metric_pop_growth_5yr": { state: "aging", label: "Aging" },
-  "metric_immigration_share": { state: "historical", label: "Historical" },
-  "metric_median_age": { state: "historical", label: "Historical" },
-};
+// Derive freshness dynamically from actual source publication dates (same logic as city pages)
+const CENSUS_METRICS = new Set(["metric_immigration_share", "metric_median_age", "metric_median_income"]);
+
+function getFreshnessForMetric(metricId: string): { state: "fresh" | "aging" | "stale" | "historical"; label: string } {
+  const isCensus = CENSUS_METRICS.has(metricId);
+  // Find the first metric value entry to get sourcePublicationDate
+  const entry = RAW_METRIC_VALUES.find((v) => v.metricId === metricId);
+  const pubDate = entry?.sourcePublicationDate ?? null;
+  const state = getFreshnessState(pubDate, isCensus);
+  const labelMap = { fresh: "Fresh", aging: "Aging", stale: "Stale", historical: "Historical" };
+  return { state, label: labelMap[state] };
+}
+
+const FRESHNESS_MAP: Record<string, { state: "fresh" | "aging" | "stale" | "historical"; label: string }> =
+  Object.fromEntries(METRICS.map((m) => [m.id, getFreshnessForMetric(m.id)]));
 
 function freshnessColor(state: string): string {
   switch (state) {
@@ -147,7 +147,7 @@ export default function DataSourcesPage() {
               step: "01",
               title: "Normalize",
               description:
-                "Each metric is normalized to a 0–100 score using min-max normalization across all 35 CMAs. Values beyond 3 standard deviations are clipped to prevent outliers from collapsing other scores.",
+                "Each metric is normalized to a 0–100 score using min-max normalization across all 36 CMAs. Values beyond 3 standard deviations are clipped to prevent outliers from collapsing other scores.",
             },
             {
               step: "02",

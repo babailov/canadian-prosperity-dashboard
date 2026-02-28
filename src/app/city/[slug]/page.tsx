@@ -27,7 +27,7 @@ export async function generateMetadata({
   if (!data) return {};
   return {
     title: `${data.cma.name} — City Profile`,
-    description: `Prosperity profile for the ${data.cma.name} CMA. Overall score: ${Math.round(data.score.overallScore)}/100. Rank ${data.rank} of 35 Canadian CMAs.`,
+    description: `Prosperity profile for the ${data.cma.name} CMA. Overall score: ${Math.round(data.score.overallScore)}/100. Rank ${data.rank} of 36 Canadian CMAs.`,
     openGraph: {
       title: `${data.cma.name} | CityScore Canada`,
       description: `Ranked #${data.rank} with an overall prosperity score of ${Math.round(data.score.overallScore)}/100.`,

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | CityScore Canada",
   },
   description:
-    "Compare all 35 Canadian Census Metropolitan Areas by prosperity score. Rank cities by economic vitality, housing affordability, safety, quality of life, environment, and demographics.",
+    "Compare all 36 Canadian Census Metropolitan Areas by prosperity score. Rank cities by economic vitality, housing affordability, safety, quality of life, environment, and demographics.",
   keywords: [
     "Canadian cities",
     "city comparison",
@@ -38,12 +38,12 @@ export const metadata: Metadata = {
     siteName: "CityScore Canada",
     title: "CityScore Canada — Canadian City Prosperity Rankings",
     description:
-      "Interactive rankings of all 35 Canadian CMAs by prosperity score. Customize weights and compare cities side-by-side.",
+      "Interactive rankings of all 36 Canadian CMAs by prosperity score. Customize weights and compare cities side-by-side.",
   },
   twitter: {
     card: "summary_large_image",
     title: "CityScore Canada",
-    description: "Rankings of all 35 Canadian CMAs by prosperity score.",
+    description: "Rankings of all 36 Canadian CMAs by prosperity score.",
   },
 };
 
