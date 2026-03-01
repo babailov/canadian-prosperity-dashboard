@@ -119,21 +119,18 @@ export default function ComparisonTrendChart({
         {description && (
           <span className="tooltip-wrapper" style={{ display: "inline-flex", alignItems: "center" }}>
             <svg
-              width="13"
-              height="13"
+              width="14"
+              height="14"
               viewBox="0 0 16 16"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              style={{ color: "#A8A29E", flexShrink: 0, cursor: "default" }}
+              style={{ color: "#78716C", flexShrink: 0, cursor: "default" }}
             >
               <circle cx="8" cy="8" r="7.5" stroke="currentColor" />
               <path d="M8 7v5" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
               <circle cx="8" cy="4.5" fill="currentColor" r="0.75" />
             </svg>
-            <div
-              className="tooltip-content"
-              style={{ maxWidth: "260px", whiteSpace: "normal", bottom: "calc(100% + 6px)", left: "50%", transform: "translateX(-50%)" }}
-            >
+            <div className="tooltip-content">
               {description}
             </div>
           </span>
