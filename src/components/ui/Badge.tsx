@@ -47,7 +47,7 @@ export function CompletenessBadge({ score }: CompletenessBadgeProps) {
       <Badge variant={variant} size="xs">
         {pct}%
       </Badge>
-      <div className="tooltip-content" style={{ whiteSpace: "normal", maxWidth: "200px" }}>
+      <div className="tooltip-content">
         <strong>Data Completeness: {pct}%</strong>
         <br />
         Fraction of metrics with real (non-proxy) data available for this CMA.
