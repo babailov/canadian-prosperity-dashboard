@@ -92098,5 +92098,725 @@
     "metricId": "metric_population",
     "sourceTableId": "17-10-0148-01",
     "collectedAt": "2026-03-01T03:07:16.662Z"
+  },
+  {
+    "cmaId": "cma_toronto",
+    "period": "2023",
+    "value": 1895,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_montreal",
+    "period": "2023",
+    "value": 1160,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_vancouver",
+    "period": "2023",
+    "value": 2333,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_calgary",
+    "period": "2023",
+    "value": 1713,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_edmonton",
+    "period": "2023",
+    "value": 1378,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_ottawa",
+    "period": "2023",
+    "value": 1726,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_winnipeg",
+    "period": "2023",
+    "value": 1321,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_quebec_city",
+    "period": "2023",
+    "value": 1003,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_hamilton",
+    "period": "2023",
+    "value": 1597,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_kitchener",
+    "period": "2023",
+    "value": 1757,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_london",
+    "period": "2023",
+    "value": 1514,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_halifax",
+    "period": "2023",
+    "value": 1870,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_oshawa",
+    "period": "2023",
+    "value": 1786,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_victoria",
+    "period": "2023",
+    "value": 2131,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_windsor",
+    "period": "2023",
+    "value": 1387,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_saskatoon",
+    "period": "2023",
+    "value": 1228,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_regina",
+    "period": "2023",
+    "value": 1151,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_sherbrooke",
+    "period": "2023",
+    "value": 844,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_barrie",
+    "period": "2023",
+    "value": 1768,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_kelowna",
+    "period": "2023",
+    "value": 1857,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_abbotsford",
+    "period": "2023",
+    "value": 1704,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_sudbury",
+    "period": "2023",
+    "value": 1109,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_kingston",
+    "period": "2023",
+    "value": 1578,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_saguenay",
+    "period": "2023",
+    "value": 859,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_thunder_bay",
+    "period": "2023",
+    "value": 1083,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_saint_john",
+    "period": "2023",
+    "value": 1101,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_fredericton",
+    "period": "2023",
+    "value": 1163,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_moncton",
+    "period": "2023",
+    "value": 1264,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_guelph",
+    "period": "2023",
+    "value": 1831,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_brantford",
+    "period": "2023",
+    "value": 1478,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_peterborough",
+    "period": "2023",
+    "value": 1456,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_lethbridge",
+    "period": "2023",
+    "value": 1159,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_nanaimo",
+    "period": "2023",
+    "value": 1748,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_red_deer",
+    "period": "2023",
+    "value": 1183,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_trois_rivieres",
+    "period": "2023",
+    "value": 912,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_st_johns",
+    "period": "2023",
+    "value": 1360,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_toronto",
+    "period": "2024",
+    "value": 2034,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_montreal",
+    "period": "2024",
+    "value": 1279,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_vancouver",
+    "period": "2024",
+    "value": 2548,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_calgary",
+    "period": "2024",
+    "value": 1953,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_edmonton",
+    "period": "2024",
+    "value": 1531,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_ottawa",
+    "period": "2024",
+    "value": 1874,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_winnipeg",
+    "period": "2024",
+    "value": 1432,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_quebec_city",
+    "period": "2024",
+    "value": 1108,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_hamilton",
+    "period": "2024",
+    "value": 1756,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_kitchener",
+    "period": "2024",
+    "value": 1864,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_london",
+    "period": "2024",
+    "value": 1589,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_halifax",
+    "period": "2024",
+    "value": 1967,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_oshawa",
+    "period": "2024",
+    "value": 1912,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_victoria",
+    "period": "2024",
+    "value": 2253,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_windsor",
+    "period": "2024",
+    "value": 1476,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_saskatoon",
+    "period": "2024",
+    "value": 1347,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_regina",
+    "period": "2024",
+    "value": 1264,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_sherbrooke",
+    "period": "2024",
+    "value": 917,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_barrie",
+    "period": "2024",
+    "value": 1872,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_kelowna",
+    "period": "2024",
+    "value": 1958,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_abbotsford",
+    "period": "2024",
+    "value": 1812,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_sudbury",
+    "period": "2024",
+    "value": 1198,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_kingston",
+    "period": "2024",
+    "value": 1678,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_saguenay",
+    "period": "2024",
+    "value": 924,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_thunder_bay",
+    "period": "2024",
+    "value": 1165,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_saint_john",
+    "period": "2024",
+    "value": 1198,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_fredericton",
+    "period": "2024",
+    "value": 1254,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_moncton",
+    "period": "2024",
+    "value": 1373,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_guelph",
+    "period": "2024",
+    "value": 1946,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_brantford",
+    "period": "2024",
+    "value": 1574,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_peterborough",
+    "period": "2024",
+    "value": 1543,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_lethbridge",
+    "period": "2024",
+    "value": 1263,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_nanaimo",
+    "period": "2024",
+    "value": 1878,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_red_deer",
+    "period": "2024",
+    "value": 1278,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_trois_rivieres",
+    "period": "2024",
+    "value": 978,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
+  },
+  {
+    "cmaId": "cma_st_johns",
+    "period": "2024",
+    "value": 1483,
+    "isProxy": false,
+    "proxyNote": null,
+    "metricId": "metric_avg_rent",
+    "sourceTableId": "CMHC-RMS",
+    "collectedAt": "2026-03-01T06:00:00.000Z"
   }
 ]

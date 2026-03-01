@@ -60,7 +60,7 @@ export default function ComparisonTrendChart({
     .filter((p) => periodSetB.has(p) && periodSetN.has(p))
     .sort();
 
-  if (commonPeriods.length < 3) return null;
+  if (commonPeriods.length < 2) return null;
 
   const alignedA = commonPeriods.map((p) => cityALine.find((pt) => pt.period === p)!);
   const alignedB = commonPeriods.map((p) => cityBLine.find((pt) => pt.period === p)!);

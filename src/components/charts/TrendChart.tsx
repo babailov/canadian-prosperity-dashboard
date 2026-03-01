@@ -47,7 +47,7 @@ export default function TrendChart({
 }: TrendChartProps) {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
-  if (cityLine.length < 3) return null;
+  if (cityLine.length < 2) return null;
 
   const allValues = [...cityLine, ...nationalAvgLine].map((p) => p.value);
   const minVal = Math.min(...allValues);

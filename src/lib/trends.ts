@@ -45,7 +45,11 @@ export const CHART_METRICS = [
   { id: "metric_cpi", label: "Consumer Price Index", unit: "" },
   { id: "metric_housing_price_index", label: "New Housing Price Index", unit: "" },
   { id: "metric_csi", label: "Crime Severity Index", unit: "" },
+  { id: "metric_avg_rent", label: "Average Monthly Rent (2BR)", unit: "" },
 ];
+
+// Annual metrics only have a few data points — use a lower minimum threshold
+const ANNUAL_METRICS = new Set(["metric_avg_rent", "metric_csi", "metric_population"]);
 
 const METRIC_DIRECTION: Record<string, "higher_is_better" | "lower_is_better"> = {
   metric_unemployment_rate: "lower_is_better",
@@ -128,7 +132,9 @@ export function getChartData(cmaId: string, metricId: string): ChartData | null 
   if (!meta) return null;
 
   const cityHistory = getMetricHistory(metricId, cmaId);
-  if (cityHistory.length < 3) return null;
+  // Annual metrics have fewer data points — require at least 2; monthly require at least 3
+  const minPoints = ANNUAL_METRICS.has(metricId) ? 2 : 3;
+  if (cityHistory.length < minPoints) return null;
 
   const cityLine: ChartSeries[] = cityHistory.map((p) => ({
     period: p.period,
