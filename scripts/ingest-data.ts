@@ -596,6 +596,49 @@ const CMHC_VACANCY_RATE_2024: Record<CmaId, number> = {
   cma_st_johns:      4.2,
 };
 
+// ── CMHC Absorbed Unit Prices (Q4 2024) ─────────────────────────────────────
+// Source: CMHC Housing Market Information Portal — Absorbed Units Prices, Q4 2024.
+// Large CMAs use direct CMHC data; smaller CMAs without direct data use provincial averages.
+
+const CMHC_ABSORBED_PRICES_2024: Record<CmaId, { value: number; isProxy: boolean; proxyNote: string | null }> = {
+  cma_toronto:       { value: 1180000, isProxy: false, proxyNote: null },
+  cma_montreal:      { value: 560000,  isProxy: false, proxyNote: null },
+  cma_vancouver:     { value: 1420000, isProxy: false, proxyNote: null },
+  cma_calgary:       { value: 680000,  isProxy: false, proxyNote: null },
+  cma_edmonton:      { value: 520000,  isProxy: false, proxyNote: null },
+  cma_ottawa:        { value: 720000,  isProxy: false, proxyNote: null },
+  cma_winnipeg:      { value: 420000,  isProxy: false, proxyNote: null },
+  cma_quebec_city:   { value: 410000,  isProxy: false, proxyNote: null },
+  cma_hamilton:      { value: 850000,  isProxy: false, proxyNote: null },
+  cma_kitchener:     { value: 820000,  isProxy: false, proxyNote: null },
+  cma_london:        { value: 680000,  isProxy: false, proxyNote: null },
+  cma_halifax:       { value: 530000,  isProxy: false, proxyNote: null },
+  cma_oshawa:        { value: 820000,  isProxy: false, proxyNote: null },
+  cma_victoria:      { value: 1050000, isProxy: false, proxyNote: null },
+  cma_windsor:       { value: 560000,  isProxy: false, proxyNote: null },
+  cma_saskatoon:     { value: 450000,  isProxy: false, proxyNote: null },
+  cma_regina:        { value: 400000,  isProxy: false, proxyNote: null },
+  cma_sherbrooke:    { value: 390000,  isProxy: true,  proxyNote: "Quebec provincial average used as proxy" },
+  cma_barrie:        { value: 780000,  isProxy: true,  proxyNote: "Ontario provincial average used as proxy" },
+  cma_kelowna:       { value: 870000,  isProxy: false, proxyNote: null },
+  cma_abbotsford:    { value: 920000,  isProxy: true,  proxyNote: "BC provincial average used as proxy" },
+  cma_sudbury:       { value: 480000,  isProxy: true,  proxyNote: "Ontario provincial average used as proxy" },
+  cma_kingston:      { value: 620000,  isProxy: true,  proxyNote: "Ontario provincial average used as proxy" },
+  cma_saguenay:      { value: 350000,  isProxy: true,  proxyNote: "Quebec provincial average used as proxy" },
+  cma_thunder_bay:   { value: 430000,  isProxy: true,  proxyNote: "Ontario provincial average used as proxy" },
+  cma_saint_john:    { value: 330000,  isProxy: true,  proxyNote: "New Brunswick provincial average used as proxy" },
+  cma_fredericton:   { value: 360000,  isProxy: true,  proxyNote: "New Brunswick provincial average used as proxy" },
+  cma_moncton:       { value: 380000,  isProxy: false, proxyNote: null },
+  cma_guelph:        { value: 860000,  isProxy: true,  proxyNote: "Ontario provincial average used as proxy" },
+  cma_brantford:     { value: 680000,  isProxy: true,  proxyNote: "Ontario provincial average used as proxy" },
+  cma_peterborough:  { value: 640000,  isProxy: true,  proxyNote: "Ontario provincial average used as proxy" },
+  cma_lethbridge:    { value: 460000,  isProxy: true,  proxyNote: "Alberta provincial average used as proxy" },
+  cma_nanaimo:       { value: 760000,  isProxy: true,  proxyNote: "BC provincial average used as proxy" },
+  cma_red_deer:      { value: 470000,  isProxy: true,  proxyNote: "Alberta provincial average used as proxy" },
+  cma_trois_rivieres: { value: 370000, isProxy: true,  proxyNote: "Quebec provincial average used as proxy" },
+  cma_st_johns:      { value: 380000,  isProxy: false, proxyNote: null },
+};
+
 // ── Census 2021 Data (kept unchanged — next Census 2026) ─────────────────────
 // Source: StatsCan Census 2021, released April 27, 2022
 // These will not change until the 2026 Census data is released (~2027).
@@ -992,6 +1035,11 @@ async function main() {
     id, CENSUS_MEDIAN_AGE_2021[id] ?? null, false, null
   ]);
 
+  const avgHomePriceRows: [string, number | null, boolean, string | null][] = ALL_CMA_IDS.map(id => {
+    const d = CMHC_ABSORBED_PRICES_2024[id];
+    return [id, d?.value ?? null, d?.isProxy ?? false, d?.proxyNote ?? null];
+  });
+
   // ── Read current data.ts ──
   const dataFilePath = path.join(process.cwd(), "src", "lib", "data.ts");
   const currentContent = fs.readFileSync(dataFilePath, "utf-8");
@@ -1123,6 +1171,15 @@ async function main() {
       "2021",
       "2022-04-27",
       "98-10-0384-01"
+    ),
+    formatMetricBlock(
+      "// ── Average New Home Price (CMHC Absorbed Unit Prices, 2024 Q4) ──",
+      "// Source: CMHC Housing Market Information Portal — Absorbed Units Prices, Q4 2024.",
+      avgHomePriceRows,
+      "metric_avg_home_price",
+      "2024-Q4",
+      "2025-02-14",
+      null
     ),
   ].join("\n");
 

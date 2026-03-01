@@ -75,15 +75,32 @@ input[type="range"]::-moz-range-thumb {
   pointer-events: none;
   position: absolute;
   z-index: 50;
-  bottom: calc(100% + 6px);
+  bottom: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  white-space: nowrap;
+  white-space: normal;
+  width: max-content;
+  max-width: 360px;
   background: #1C1917;
-  color: white;
-  font-size: 0.75rem;
-  padding: 6px 10px;
-  border-radius: 6px;
+  color: #FAFAF8;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  line-height: 17px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Downward-pointing caret arrow */
+.tooltip-content::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #1C1917;
+  border-bottom: none;
 }
 
 .tooltip-wrapper:hover .tooltip-content {

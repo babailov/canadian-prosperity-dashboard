@@ -1,6 +1,7 @@
 import Link from "next/link";
 import MiniScoreBar from "./MiniScoreBar";
 import { DIMENSION_ORDER, DIMENSION_LABELS } from "@/types";
+import TrendBadge from "@/components/charts/TrendBadge";
 
 interface CityRowData {
   cmaId: string;
@@ -16,6 +17,8 @@ interface CityRowData {
   safetyScore: number | null;
   environmentScore: number | null;
   demographicScore: number | null;
+  trendBadge?: "Rising" | "Falling" | "Stable";
+  trendDelta?: number;
 }
 
 interface CityRowProps {
@@ -113,6 +116,13 @@ export default function CityRow({ data, isHighlighted }: CityRowProps) {
           {Math.round(data.overallScore)}
         </span>
       </div>
+
+      {/* Trend badge (hidden on mobile) */}
+      {data.trendBadge && (
+        <div className="hidden sm:flex w-20 justify-center flex-shrink-0">
+          <TrendBadge badge={data.trendBadge} />
+        </div>
+      )}
 
       {/* Dimension mini-bars (hidden on mobile) */}
       <div className="hidden lg:flex items-center gap-3">

@@ -66,7 +66,7 @@ export default function FreshnessBadge({
         <span className={`w-1.5 h-1.5 rounded-full ${config.dot} flex-shrink-0`} />
         {displayLabel}
       </span>
-      <div className="tooltip-content" style={{ maxWidth: "220px", whiteSpace: "normal" }}>
+      <div className="tooltip-content" style={{ maxWidth: "240px" }}>
         <div className="space-y-1">
           {sourceTableId && (
             <div><span className="opacity-70">Table:</span> {sourceTableId}</div>

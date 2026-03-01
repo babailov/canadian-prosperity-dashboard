@@ -28,6 +28,7 @@ export interface Metric {
   id: string;
   dimension: Dimension;
   name: string;
+  description: string | null;
   sourceName: string;
   sourceTable: string | null;
   sourceUrl: string | null;
