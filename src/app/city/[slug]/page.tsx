@@ -12,6 +12,9 @@ import Badge from "@/components/ui/Badge";
 import FreshnessBadge from "@/components/city/FreshnessBadge";
 import Accordion from "@/components/ui/Accordion";
 import { CompletenessBadge } from "@/components/ui/Badge";
+import { computeTrend, getAllChartData } from "@/lib/trends";
+import TrendBadge from "@/components/charts/TrendBadge";
+import TrendChart from "@/components/charts/TrendChart";
 
 export async function generateStaticParams() {
   return CMAS.map((cma) => ({ slug: cma.slug }));
@@ -104,6 +107,9 @@ export default async function CityProfilePage({
   if (!data) notFound();
 
   const { cma, score, rank, dimensions } = data;
+
+  const trend = computeTrend(cma.id);
+  const charts = getAllChartData(cma.id);
 
   // Build stat cards data
   const statValues = STAT_CARD_METRICS.map((card) => {
@@ -219,8 +225,9 @@ export default async function CityProfilePage({
             >
               Overall Score
             </div>
-            <div className="mt-2">
+            <div className="mt-2 flex items-center gap-2">
               <CompletenessBadge score={score.completenessScore} />
+              {trend && <TrendBadge badge={trend.badge} delta={trend.delta} size="lg" />}
             </div>
           </div>
         </div>
@@ -277,6 +284,64 @@ export default async function CityProfilePage({
           ))}
         </div>
       </div>
+
+      {/* Historical Trends Section */}
+      {charts.length > 0 && (
+        <div className="px-4 sm:px-16 pb-10">
+          <div className="mb-6">
+            <div className="flex items-center gap-3 mb-1">
+              <h2
+                style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontSize: "28px",
+                  fontWeight: 700,
+                  color: "#1C1917",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                Historical Trends
+              </h2>
+              {trend && <TrendBadge badge={trend.badge} delta={trend.delta} />}
+            </div>
+            <p
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontSize: "15px",
+                color: "#78716C",
+                marginTop: "4px",
+              }}
+            >
+              Year-over-year metric performance for {cma.name}
+              {trend?.leadingPhrase && (
+                <span> — {trend.leadingPhrase}</span>
+              )}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {charts.slice(0, 4).map((chart) => (
+              <TrendChart
+                key={chart.metricId}
+                label={chart.label}
+                unit={chart.unit}
+                cityName={cma.name}
+                cityLine={chart.cityLine}
+                nationalAvgLine={chart.nationalAvgLine}
+              />
+            ))}
+          </div>
+          {charts[4] && (
+            <div className="mt-4">
+              <TrendChart
+                label={charts[4].label}
+                unit={charts[4].unit}
+                cityName={cma.name}
+                cityLine={charts[4].cityLine}
+                nationalAvgLine={charts[4].nationalAvgLine}
+              />
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Score Breakdown Section */}
       <div className="px-4 sm:px-16 pb-10">

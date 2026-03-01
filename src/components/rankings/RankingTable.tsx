@@ -21,6 +21,8 @@ interface ScoreRow {
   demographicScore: number | null;
   defaultOverallScore: number;
   completenessScore: number;
+  trendBadge?: "Rising" | "Falling" | "Stable";
+  trendDelta?: number;
 }
 
 interface RankingTableProps {
@@ -91,6 +93,8 @@ export default function RankingTable({ rows, dataRefreshDate }: RankingTableProp
     safetyScore: r.safetyScore,
     environmentScore: r.environmentScore,
     demographicScore: r.demographicScore,
+    trendBadge: r.trendBadge,
+    trendDelta: r.trendDelta,
   }));
 
   const displayedRows = showAll ? cityRows : cityRows.slice(0, INITIAL_DISPLAY_COUNT);
@@ -181,6 +185,19 @@ export default function RankingTable({ rows, dataRefreshDate }: RankingTableProp
           }}
         >
           Score
+        </div>
+        <div
+          className="hidden sm:block w-20 text-center flex-shrink-0"
+          style={{
+            fontFamily: "var(--font-inter)",
+            fontSize: "11px",
+            fontWeight: 500,
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            color: "#A8A29E",
+          }}
+        >
+          Trend
         </div>
         <div
           className="hidden lg:flex items-center gap-3"
