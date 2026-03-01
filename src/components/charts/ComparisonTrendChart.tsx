@@ -10,6 +10,7 @@ interface ChartPoint {
 interface ComparisonTrendChartProps {
   label: string;
   unit: string;
+  description?: string | null;
   cityAName: string;
   cityBName: string;
   cityALine: ChartPoint[];
@@ -43,6 +44,7 @@ function formatValue(value: number, unit: string): string {
 export default function ComparisonTrendChart({
   label,
   unit,
+  description,
   cityAName,
   cityBName,
   cityALine,
@@ -108,9 +110,34 @@ export default function ComparisonTrendChart({
           color: "#1C1917",
           margin: 0,
           marginBottom: "16px",
+          display: "flex",
+          alignItems: "center",
+          gap: "6px",
         }}
       >
         {label}
+        {description && (
+          <span className="tooltip-wrapper" style={{ display: "inline-flex", alignItems: "center" }}>
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ color: "#A8A29E", flexShrink: 0, cursor: "default" }}
+            >
+              <circle cx="8" cy="8" r="7.5" stroke="currentColor" />
+              <path d="M8 7v5" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
+              <circle cx="8" cy="4.5" fill="currentColor" r="0.75" />
+            </svg>
+            <div
+              className="tooltip-content"
+              style={{ maxWidth: "260px", whiteSpace: "normal", bottom: "calc(100% + 6px)", left: "50%", transform: "translateX(-50%)" }}
+            >
+              {description}
+            </div>
+          </span>
+        )}
       </h4>
 
       <div style={{ position: "relative" }}>

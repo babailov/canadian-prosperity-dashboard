@@ -822,6 +822,7 @@ export default function ComparisonLayout({ allData, cmas }: ComparisonLayoutProp
                   key={metric.id}
                   label={metric.label}
                   unit={metric.unit}
+                  description={metric.description}
                   cityAName={dataA.cma.name}
                   cityBName={dataB.cma.name}
                   cityALine={chartA.cityLine}

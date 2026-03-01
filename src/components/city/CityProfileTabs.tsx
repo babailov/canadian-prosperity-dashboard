@@ -396,6 +396,7 @@ export default function CityProfileTabs({
                         key={chart.metricId}
                         label={chart.label}
                         unit={chart.unit}
+                        description={chart.description}
                         cityName={cma.name}
                         cityLine={chart.cityLine}
                         nationalAvgLine={chart.nationalAvgLine}
@@ -408,6 +409,7 @@ export default function CityProfileTabs({
                     <TrendChart
                       label={orphan.label}
                       unit={orphan.unit}
+                      description={orphan.description}
                       cityName={cma.name}
                       cityLine={orphan.cityLine}
                       nationalAvgLine={orphan.nationalAvgLine}

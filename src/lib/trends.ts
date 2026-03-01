@@ -24,6 +24,7 @@ export interface ChartData {
   metricId: string;
   label: string;
   unit: string;
+  description: string | null;
   cityLine: ChartSeries[];
   nationalAvgLine: ChartSeries[];
 }
@@ -40,12 +41,12 @@ export interface MoverCard {
 // ── Constants ─────────────────────────────────────────────────────────────────
 
 export const CHART_METRICS = [
-  { id: "metric_unemployment_rate", label: "Unemployment Rate", unit: "%" },
-  { id: "metric_employment_rate", label: "Employment Rate", unit: "%" },
-  { id: "metric_cpi", label: "Consumer Price Index", unit: "" },
-  { id: "metric_housing_price_index", label: "New Housing Price Index", unit: "" },
-  { id: "metric_csi", label: "Crime Severity Index", unit: "" },
-  { id: "metric_avg_rent", label: "Average Monthly Rent (2BR)", unit: "" },
+  { id: "metric_unemployment_rate", label: "Unemployment Rate", unit: "%", description: null },
+  { id: "metric_employment_rate", label: "Employment Rate", unit: "%", description: null },
+  { id: "metric_cpi", label: "Consumer Price Index", unit: "", description: "Measures inflation since 2002 (base = 100), not cost of living. Higher = faster price increases." },
+  { id: "metric_housing_price_index", label: "New Housing Price Index", unit: "", description: "Measures price change since Dec 2016 (base = 100), not absolute prices. A value of 108 means prices rose 8% since 2016." },
+  { id: "metric_csi", label: "Crime Severity Index", unit: "", description: "Weighted crime index where serious crimes count more. Canada-wide base = 100 in 2006." },
+  { id: "metric_avg_rent", label: "Average Monthly Rent (2BR)", unit: "", description: null },
 ];
 
 // Annual metrics only have a few data points — use a lower minimum threshold
@@ -153,7 +154,7 @@ export function getChartData(cmaId: string, metricId: string): ChartData | null 
     return { period, value: Math.round(avg * 100) / 100 };
   });
 
-  return { metricId: meta.id, label: meta.label, unit: meta.unit, cityLine, nationalAvgLine };
+  return { metricId: meta.id, label: meta.label, unit: meta.unit, description: meta.description, cityLine, nationalAvgLine };
 }
 
 export function getAllChartData(cmaId: string): ChartData[] {
