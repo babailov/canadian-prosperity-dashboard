@@ -382,29 +382,41 @@ export default function CityProfileTabs({
               )}
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {charts.slice(0, 4).map((chart) => (
-              <TrendChart
-                key={chart.metricId}
-                label={chart.label}
-                unit={chart.unit}
-                cityName={cma.name}
-                cityLine={chart.cityLine}
-                nationalAvgLine={chart.nationalAvgLine}
-              />
-            ))}
-          </div>
-          {charts[4] && (
-            <div className="mt-4">
-              <TrendChart
-                label={charts[4].label}
-                unit={charts[4].unit}
-                cityName={cma.name}
-                cityLine={charts[4].cityLine}
-                nationalAvgLine={charts[4].nationalAvgLine}
-              />
-            </div>
-          )}
+          {(() => {
+            // Render charts in pairs (2-col grid). If there's an odd chart at the
+            // end, render it full-width below the grid.
+            const paired = charts.length % 2 === 0 ? charts : charts.slice(0, -1);
+            const orphan = charts.length % 2 !== 0 ? charts[charts.length - 1] : null;
+            return (
+              <>
+                {paired.length > 0 && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {paired.map((chart) => (
+                      <TrendChart
+                        key={chart.metricId}
+                        label={chart.label}
+                        unit={chart.unit}
+                        cityName={cma.name}
+                        cityLine={chart.cityLine}
+                        nationalAvgLine={chart.nationalAvgLine}
+                      />
+                    ))}
+                  </div>
+                )}
+                {orphan && (
+                  <div className="mt-4">
+                    <TrendChart
+                      label={orphan.label}
+                      unit={orphan.unit}
+                      cityName={cma.name}
+                      cityLine={orphan.cityLine}
+                      nationalAvgLine={orphan.nationalAvgLine}
+                    />
+                  </div>
+                )}
+              </>
+            );
+          })()}
         </>
       )}
 
