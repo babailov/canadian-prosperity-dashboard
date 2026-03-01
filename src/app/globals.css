@@ -79,7 +79,7 @@ input[type="range"]::-moz-range-thumb {
   left: 50%;
   transform: translateX(-50%);
   white-space: normal;
-  max-width: 240px;
+  max-width: 320px;
   background: #1C1917;
   color: #FAFAF8;
   font-family: Inter, sans-serif;
