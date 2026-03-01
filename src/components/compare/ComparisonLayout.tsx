@@ -4,6 +4,8 @@ import { useState, useCallback } from "react";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { CMA, DIMENSION_ORDER, DIMENSION_LABELS, Dimension } from "@/types";
 import { getCityProfileData } from "@/lib/computed-scores";
+import { getChartData, CHART_METRICS } from "@/lib/trends";
+import ComparisonTrendChart from "@/components/charts/ComparisonTrendChart";
 
 type CityRankData = ReturnType<typeof import("@/lib/computed-scores").getAllCityRankData>[number];
 
@@ -781,6 +783,54 @@ export default function ComparisonLayout({ allData, cmas }: ComparisonLayoutProp
               </div>
             );
           })}
+        </div>
+
+        {/* Trend Comparison Section */}
+        <div style={{ paddingTop: "48px" }}>
+          {/* Section header */}
+          <div style={{ marginBottom: "24px" }}>
+            <h2
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: "24px",
+                fontWeight: 700,
+                color: "#1C1917",
+                letterSpacing: "-0.01em",
+                marginBottom: "4px",
+              }}
+            >
+              Trend Comparison
+            </h2>
+            <p
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontSize: "15px",
+                color: "#78716C",
+              }}
+            >
+              How each city&apos;s key indicators have moved over time.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {CHART_METRICS.map((metric) => {
+              const chartA = getChartData(dataA.cma.id, metric.id);
+              const chartB = getChartData(dataB.cma.id, metric.id);
+              if (!chartA || !chartB) return null;
+              return (
+                <ComparisonTrendChart
+                  key={metric.id}
+                  label={metric.label}
+                  unit={metric.unit}
+                  cityAName={dataA.cma.name}
+                  cityBName={dataB.cma.name}
+                  cityALine={chartA.cityLine}
+                  cityBLine={chartB.cityLine}
+                  nationalAvgLine={chartA.nationalAvgLine}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

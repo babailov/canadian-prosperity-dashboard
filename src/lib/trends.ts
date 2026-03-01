@@ -39,7 +39,7 @@ export interface MoverCard {
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
-const CHART_METRICS = [
+export const CHART_METRICS = [
   { id: "metric_unemployment_rate", label: "Unemployment Rate", unit: "%" },
   { id: "metric_employment_rate", label: "Employment Rate", unit: "%" },
   { id: "metric_cpi", label: "Consumer Price Index", unit: "" },
