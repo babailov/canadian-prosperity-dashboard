@@ -46,6 +46,12 @@ function formatRawValue(metricId: string, value: number): string {
     case "metric_pop_growth":
     case "metric_pop_growth_5yr":
       return `${value}%`;
+    case "metric_avg_home_price": {
+      if (value >= 1_000_000) {
+        return `$${(value / 1_000_000).toFixed(2).replace(/\.?0+$/, "")}M`;
+      }
+      return `$${Math.round(value / 1000)}K`;
+    }
     case "metric_csi":
       return value.toFixed(1);
     case "metric_aqhi":
@@ -219,11 +225,37 @@ export default function CityProfileTabs({
                                 color: "#78716C",
                                 flex: 1,
                                 minWidth: 0,
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "4px",
+                                flexWrap: "wrap",
                               }}
                             >
                               {metric.name}
+                              {metric.description && (
+                                <span className="tooltip-wrapper" style={{ display: "inline-flex", alignItems: "center" }}>
+                                  <svg
+                                    width="13"
+                                    height="13"
+                                    viewBox="0 0 16 16"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    style={{ color: "#A8A29E", flexShrink: 0, cursor: "default" }}
+                                  >
+                                    <circle cx="8" cy="8" r="7.5" stroke="currentColor" />
+                                    <path d="M8 7v5" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
+                                    <circle cx="8" cy="4.5" fill="currentColor" r="0.75" />
+                                  </svg>
+                                  <div
+                                    className="tooltip-content"
+                                    style={{ maxWidth: "240px", whiteSpace: "normal", bottom: "calc(100% + 6px)", left: "50%", transform: "translateX(-50%)" }}
+                                  >
+                                    {metric.description}
+                                  </div>
+                                </span>
+                              )}
                               {value?.isProxy && (
-                                <span style={{ color: "#D4A843", fontSize: "11px", marginLeft: "4px" }}>(est.)</span>
+                                <span style={{ color: "#D4A843", fontSize: "11px" }}>(est.)</span>
                               )}
                             </span>
                             <div className="flex items-center gap-2 flex-shrink-0">
